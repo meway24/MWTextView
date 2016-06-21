@@ -33,6 +33,7 @@
 - (void)commitView
 {
     _textView = [[MWTextView alloc] initWithFrame:CGRectMake(0.f, 20.f, [UIScreen mainScreen].bounds.size.width, 200.f)];
+    _textView.backgroundColor = [UIColor lightGrayColor];
     _textView.font = [UIFont systemFontOfSize:16.f];
     _textView.textColor = [UIColor blackColor];
 
@@ -56,9 +57,7 @@
         @"#[^@#]+?#" : @{NSForegroundColorAttributeName : [UIColor blueColor]},
         @"(\\*\\w+(\\s\\w+)*\\*)\\s" : @{NSFontAttributeName : [UIFont boldSystemFontOfSize:16.f],
                                          NSForegroundColorAttributeName : [UIColor purpleColor]},
-        @"(_\\w+(\\s\\w+)*_)\\s" : @{NSForegroundColorAttributeName : [UIColor brownColor]},
-        @"(-\\w+(\\s\\w+)*-)\\s" : @{NSFontAttributeName : [UIFont boldSystemFontOfSize:16.f],
-                                     NSForegroundColorAttributeName : [UIColor greenColor]}
+        @"(-\\w+(\\s\\w+)*-)\\s" : @{NSStrikethroughStyleAttributeName : @1}
     };
 }
 
