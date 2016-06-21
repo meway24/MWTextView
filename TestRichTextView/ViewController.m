@@ -6,8 +6,8 @@
 //  Copyright © 2016年 yeapoo. All rights reserved.
 //
 
-#import "ViewController.h"
 #import "MWTextView.h"
+#import "ViewController.h"
 
 @interface ViewController ()
 
@@ -57,9 +57,7 @@
         @"#[^@#]+?#" : @{NSForegroundColorAttributeName : [UIColor blueColor]},
         @"(\\*\\w+(\\s\\w+)*\\*)\\s" : @{NSFontAttributeName : [UIFont boldSystemFontOfSize:16.f],
                                          NSForegroundColorAttributeName : [UIColor purpleColor]},
-        @"(_\\w+(\\s\\w+)*_)\\s" : @{NSForegroundColorAttributeName : [UIColor brownColor]},
-        @"(-\\w+(\\s\\w+)*-)\\s" : @{NSFontAttributeName : [UIFont boldSystemFontOfSize:16.f],
-                                     NSForegroundColorAttributeName : [UIColor greenColor]}
+        @"(-\\w+(\\s\\w+)*-)\\s" : @{NSStrikethroughStyleAttributeName : @1}
     };
 }
 
