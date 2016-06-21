@@ -80,6 +80,10 @@
 
 - (void)configStyles
 {
+    if (self.markedTextRange) {
+        return;
+    }
+    
     if (!_regexAttributes || _regexAttributes.count == 0) {
         return;
     }

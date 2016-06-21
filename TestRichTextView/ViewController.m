@@ -6,8 +6,8 @@
 //  Copyright © 2016年 yeapoo. All rights reserved.
 //
 
-#import "MWTextView.h"
 #import "ViewController.h"
+#import "MWTextView.h"
 
 @interface ViewController ()
 
@@ -33,6 +33,7 @@
 - (void)commitView
 {
     _textView = [[MWTextView alloc] initWithFrame:CGRectMake(0.f, 20.f, [UIScreen mainScreen].bounds.size.width, 200.f)];
+    _textView.backgroundColor = [UIColor lightGrayColor];
     _textView.font = [UIFont systemFontOfSize:16.f];
     _textView.textColor = [UIColor blackColor];
 
