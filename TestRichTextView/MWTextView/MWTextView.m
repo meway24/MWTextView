@@ -88,6 +88,10 @@
         return;
     }
 
+//    DLog(@"selectedRange = %@", NSStringFromRange(self.selectedRange));
+    
+    NSRange originRange = NSMakeRange(self.selectedRange.location, self.selectedRange.length);
+    
     NSString *str = self.text.mutableCopy;
 
     NSMutableAttributedString *aStr = [[NSMutableAttributedString alloc] initWithString:str attributes:self.defaultAttributes];
@@ -110,6 +114,12 @@
     }
 
     self.attributedText = aStr;
+    
+    [self scrollRangeToVisible:originRange];
+    
+    self.selectedRange = originRange;
+    
+//    DLog(@"selectedRange22222222 = %@", NSStringFromRange(self.selectedRange));
 }
 
 #pragma mark - Setter/Getter
