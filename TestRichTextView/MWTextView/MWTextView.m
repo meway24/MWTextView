@@ -8,7 +8,6 @@
 
 #import "MWTextView.h"
 
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 #define SYSTEM_VERSION_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
 @interface MWTextView ()
@@ -46,7 +45,7 @@
     [self addSubview:self.placeHolderLabel];
     [self sendSubviewToBack:_placeHolderLabel];
 
-    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0")&&SYSTEM_VERSION_LESS_THAN(@"9.0")) {
+    if (SYSTEM_VERSION_LESS_THAN(@"9.0")) {
         self.layoutManager.allowsNonContiguousLayout = NO;
     }
     
